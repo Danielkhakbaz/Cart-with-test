@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Text } from "@radix-ui/themes";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
+import LoginButton from "src/components/login-button";
+import LogoutButton from "src/components/logout-button";
 
 const AuthStatus = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();

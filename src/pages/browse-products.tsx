@@ -1,12 +1,12 @@
-import { Select, Table } from "@radix-ui/themes";
-import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import axios, { AxiosError } from "axios";
+import QuantitySelector from "src/components/quantity-selector";
+import { Category, Product } from "src/entities";
+import { Select, Table } from "@radix-ui/themes";
 import "react-loading-skeleton/dist/skeleton.css";
-import QuantitySelector from "../components/QuantitySelector";
-import { Category, Product } from "../entities";
 
-function BrowseProducts() {
+const BrowseProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isProductsLoading, setProductsLoading] = useState(false);
@@ -129,6 +129,6 @@ function BrowseProducts() {
       {renderProducts()}
     </div>
   );
-}
+};
 
 export default BrowseProducts;

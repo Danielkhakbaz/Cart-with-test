@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { fetchCategories } from "../store/categorySlice";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { fetchCategories } from "src/store/category-slice";
+import { useAppDispatch, useAppSelector } from "src/store/hooks";
 
-function CategoryList() {
+const CategoryList = () => {
   const dispatch = useAppDispatch();
   const categories = useAppSelector((state) => state.category.list);
   const loading = useAppSelector((state) => state.category.loading);
@@ -28,6 +28,6 @@ function CategoryList() {
       )}
     </div>
   );
-}
+};
 
 export default CategoryList;

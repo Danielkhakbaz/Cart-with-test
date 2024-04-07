@@ -1,11 +1,11 @@
-import { Table } from "@radix-ui/themes";
-import axios from "axios";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import QuantitySelector from "../components/QuantitySelector";
-import { Product } from "../entities";
+import { useQuery } from "react-query";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import axios from "axios";
+import { Product } from "src/entities";
+import { Button, Table } from "@radix-ui/themes";
 
-function ProductListPage() {
+const ProductListPage = withAuthenticationRequired(() => {
   const { data: products, isLoading, error } = useProducts();
 
   const renderProducts = () => {
@@ -20,19 +20,16 @@ function ProductListPage() {
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Price</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {products!.map((product) => (
             <Table.Row key={product.id}>
-              <Table.Cell>
-                <Link to={product.id.toString()}>{product.name}</Link>
-              </Table.Cell>
+              <Table.Cell>{product.name}</Table.Cell>
               <Table.Cell>${product.price}</Table.Cell>
               <Table.Cell>
-                <QuantitySelector product={product} />
+                <Link to={`/admin/products/${product.id}/edit`}>Edit</Link>
               </Table.Cell>
             </Table.Row>
           ))}
@@ -44,10 +41,13 @@ function ProductListPage() {
   return (
     <div>
       <h1>Products</h1>
+      <Link to="new">
+        <Button>New Product</Button>
+      </Link>
       {renderProducts()}
     </div>
   );
-}
+});
 
 const useProducts = () =>
   useQuery<Product[], Error>({

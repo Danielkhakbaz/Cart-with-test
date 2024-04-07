@@ -1,10 +1,10 @@
-import { withAuthenticationRequired } from "@auth0/auth0-react";
-import { Heading } from "@radix-ui/themes";
-import axios from "axios";
-import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import ProductForm from "../../components/ProductForm";
-import useProduct from "../../hooks/useProduct";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import toast from "react-hot-toast";
+import axios from "axios";
+import ProductForm from "src/components/product-form";
+import useProduct from "src/hooks/useProduct";
+import { Heading } from "@radix-ui/themes";
 
 const EditProductPage = withAuthenticationRequired(() => {
   const navigate = useNavigate();

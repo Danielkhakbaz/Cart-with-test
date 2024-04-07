@@ -1,8 +1,8 @@
 import { Select } from "@radix-ui/themes";
 
-interface Props {
+type Props = {
   onChange: (status: string) => void;
-}
+};
 
 const OrderStatusSelector = ({ onChange }: Props) => {
   return (

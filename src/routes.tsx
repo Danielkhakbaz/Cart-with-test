@@ -1,17 +1,17 @@
 import { RouteObject } from "react-router-dom";
-import App from "./App.tsx";
-import ErrorPage from "./pages/ErrorPage.tsx";
-import HomePage from "./pages/HomePage.tsx";
-import PlaygroundPage from "./pages/PlaygroundPage.tsx";
-import ProductDetailPage from "./pages/ProductDetailPage.tsx";
-import ProductListPage from "./pages/ProductListPage.tsx";
-import AdminHomePage from "./pages/admin/AdminHomePage.tsx";
-import AdminLayout from "./pages/admin/AdminLayout.tsx";
-import EditProductPage from "./pages/admin/EditProductPage.tsx";
-import NewProductPage from "./pages/admin/NewProductPage.tsx";
-import AdminProductListPage from "./pages/admin/ProductListPage.tsx";
+import App from "src/App.tsx";
+import ErrorPage from "src/pages/error";
+import HomePage from "src/pages/home";
+import PlaygroundPage from "src/pages/playground";
+import ProductListPage from "src/pages/product-list";
+import ProductDetailPage from "src/pages/product-detail";
+import AdminLayout from "src/pages/admin/admin-layout";
+import AdminHomePage from "src/pages/admin/admin-home";
+import AdminProductListPage from "src/pages/admin/product-list";
+import NewProductPage from "src/pages/admin/new-product";
+import EditProductPage from "src/pages/admin/edit-product";
 
-const routes: RouteObject[] = [
+export const Routes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
@@ -34,5 +34,3 @@ const routes: RouteObject[] = [
     ],
   },
 ];
-
-export default routes;

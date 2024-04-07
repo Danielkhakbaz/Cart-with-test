@@ -1,11 +1,11 @@
+import { PropsWithChildren } from "react";
+import AuthProvider from "src/providers/auth-provider";
+import { CartProvider } from "src/providers/cart-provider";
+import ReactQueryProvider from "src/providers/react-query-provider";
+import ReduxProvider from "src/providers/redux-provider";
+import { LanguageProvider } from "src/providers/language/language-provider";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
-import { PropsWithChildren } from "react";
-import AuthProvider from "./AuthProvider";
-import { CartProvider } from "./CartProvider";
-import ReactQueryProvider from "./ReactQueryProvider";
-import ReduxProvider from "./ReduxProvider";
-import { LanguageProvider } from "./language/LanguageProvider";
 
 const Providers = ({ children }: PropsWithChildren) => {
   return (

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Language } from "./type";
+import { Language } from "src/providers/language/type";
 
 type LanguageContextType = {
   currentLanguage: Language;

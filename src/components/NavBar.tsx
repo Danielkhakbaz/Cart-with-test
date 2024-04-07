@@ -1,10 +1,10 @@
+import { Link, NavLink } from "react-router-dom";
 import { Badge, Flex, Text } from "@radix-ui/themes";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdHome } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
-import { useCart } from "../hooks/useCart";
-import AuthStatus from "./AuthStatus";
-import LanguageSelector from "./LanguageSelector";
+import AuthStatus from "src/components/auth-status";
+import LanguageSelector from "src/components/language-selector";
+import { useCart } from "src/hooks/useCart";
 
 const NavBar = () => {
   const { getItemCount } = useCart();

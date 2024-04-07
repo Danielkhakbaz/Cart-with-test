@@ -1,4 +1,4 @@
-import { User } from "../entities";
+import { User } from "src/entities";
 
 const UserAccount = ({ user }: { user: User }) => {
   return (

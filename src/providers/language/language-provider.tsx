@@ -1,23 +1,22 @@
 import { ReactNode, useState } from "react";
+import LanguageContext from "src/providers/language/language-context";
+import EN from "src/providers/language/data/en.json";
+import ES from "src/providers/language/data/es.json";
+import { Language } from "src/providers/language/type";
 
-import LanguageContext from "./LanguageContext";
-import en from "./data/en.json";
-import es from "./data/es.json";
-import { Language } from "./type";
-
-interface Props {
+type Props = {
   language: Language;
   children: ReactNode;
-}
+};
 
-export function LanguageProvider({ language, children }: Props) {
+export const LanguageProvider = ({ language, children }: Props) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>(language);
 
   const changeLanguage = (language: Language) => setCurrentLanguage(language);
 
   const labelsDictionary: { [key: string]: { [key: string]: string } } = {
-    en,
-    es,
+    EN,
+    ES,
   };
 
   const getLabel = (labelId: string) => {
@@ -36,4 +35,4 @@ export function LanguageProvider({ language, children }: Props) {
       {children}
     </LanguageContext.Provider>
   );
-}
+};

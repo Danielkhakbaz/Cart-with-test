@@ -1,4 +1,4 @@
-import Label from "../components/Label";
+import Label from "src/components/label";
 
 const HomePage = () => {
   return (

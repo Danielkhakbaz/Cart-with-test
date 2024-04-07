@@ -8,8 +8,8 @@ import useCategories from "../hooks/useCategories";
 import {
   ProductFormData,
   productFormSchema,
-} from "../validationSchemas/productSchema";
-import ErrorMessage from "./ErrorMessage";
+} from "src/validationSchemas/product-schema";
+import ErrorMessage from "src/components/error-message";
 
 interface Props {
   product?: Product;

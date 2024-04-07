@@ -1,6 +1,6 @@
-import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
-import { Product } from "../entities";
+import axios, { AxiosError } from "axios";
+import { Product } from "src/entities";
 
 const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);

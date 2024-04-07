@@ -1,7 +1,7 @@
-import { Button } from "@radix-ui/themes";
 import { useState } from "react";
+import { Button } from "@radix-ui/themes";
 
-function Onboarding() {
+const Onboarding = () => {
   const [isTutorialCompleted, setTutorialCompleted] = useState(
     localStorage.getItem("tutorialCompleted") === "true"
   );
@@ -29,6 +29,6 @@ function Onboarding() {
       )}
     </div>
   );
-}
+};
 
 export default Onboarding;

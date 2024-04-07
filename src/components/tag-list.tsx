@@ -1,5 +1,5 @@
-import delay from "delay";
 import { useEffect, useState } from "react";
+import delay from "delay";
 
 const TagList = () => {
   const [tags, setTags] = useState<string[]>([]);

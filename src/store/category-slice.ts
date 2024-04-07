@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Category } from "../entities";
-import { RootState } from "./store";
+import { Category } from "src/entities";
+import { RootState } from "src/store/store";
 
-export interface CategoryState {
+export type CategoryState = {
   list: Category[];
   loading: boolean;
   error: string | null;
-}
+};
 
 const initialState: CategoryState = {
   list: [],

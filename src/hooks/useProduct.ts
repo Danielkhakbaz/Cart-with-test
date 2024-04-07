@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useQuery } from "react-query";
-import { Product } from "../entities";
+import { Product } from "src/entities";
 
 const useProduct = (productId: number) => {
   return useQuery<Product, Error>({

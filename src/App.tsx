@@ -1,12 +1,12 @@
-import Layout from "./pages/Layout";
-import Providers from "./providers";
+import Layout from "src/pages/layout";
+import Providers from "src/providers";
 
-function App() {
+const App = () => {
   return (
     <Providers>
       <Layout />
     </Providers>
   );
-}
+};
 
 export default App;
