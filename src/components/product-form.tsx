@@ -3,18 +3,18 @@ import { Box, Button, Select, TextField } from "@radix-ui/themes";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Product } from "../entities";
-import useCategories from "../hooks/useCategories";
+import { Product } from "src/entities";
+import useCategories from "src/hooks/useCategories";
 import {
   ProductFormData,
   productFormSchema,
-} from "src/validationSchemas/product-schema";
+} from "src/validation-schemas/product-schema";
 import ErrorMessage from "src/components/error-message";
 
-interface Props {
+type Props = {
   product?: Product;
   onSubmit: (product: ProductFormData) => Promise<void>;
-}
+};
 
 const ProductForm = ({ product, onSubmit }: Props) => {
   const { data: categories, isLoading } = useCategories();

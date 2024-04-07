@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-interface Props {
+type Props = {
   onChange: (text: string) => void;
-}
+};
 
 const SearchBox = ({ onChange }: Props) => {
   const [searchTerm, setSearchTerm] = useState("");
